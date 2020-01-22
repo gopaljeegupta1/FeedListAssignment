@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="MyListBinding">
+
+        <variable
+            name="mylistmodel"
+            type="com.example.feedlist.viewmodel.MyListViewModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/cardview_shadow_end_color"
+        app:cardCornerRadius="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{mylistmodel.rowTitle}"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="@{mylistmodel.rowContent}"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_launcher"
+                    app:imageUrl="@{mylistmodel.rowImage}" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
